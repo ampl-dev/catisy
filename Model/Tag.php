@@ -18,6 +18,14 @@ class Tag extends AppModel {
      */
     public $actsAs = array(
         'Tree',
+        'Containable',
+        'Utils.Sluggable' => array(
+            'label' => 'name',
+            'separator' => '-',
+            'length' => 100,
+            'update' => false,
+            'unique' => true,
+        )
     );
 
     /**
@@ -108,22 +116,4 @@ class Tag extends AppModel {
             'counterQuery' => ''
         )
     );
-
-    /**
-     * List of behaviors to load when the model object is initialized. Settings can be
-     * passed to behaviors by using the behavior name as index. Eg:
-     *
-     * @var array
-     */
-    public $actsAs = array(
-        'Containable',
-        'Utils.Sluggable' => array(
-            'label' => 'name',
-            'separator' => '-',
-            'length' => 100,
-            'update' => false,
-            'unique' => true,
-        )
-    );
-
 }
