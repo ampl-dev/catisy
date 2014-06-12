@@ -9,17 +9,7 @@
 
         <!-- Le styles -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 70px; /* 70px to make the container go all the way to the bottom of the topbar */
-            }
-            .affix {
-                position: fixed;
-                top: 60px;
-                width: 220px;
-            }
-        </style>
-
+        <?=$this->Html->css('sticky-footer-navbar')?>
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -47,7 +37,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
                         <? if ($currentUser): ?>
-                        <li><p class="navbar-text">Logged in as <?= $currentUser['name'] ?></p></li>
+                            <li><p class="navbar-text">Logged in as <?= $currentUser['name'] ?></p></li>
                             <li><?= $this->Html->link('Log Out', array('admin' => false, 'plugin' => null, 'controller' => 'users', 'action' => 'logout')) ?></li>
                         <? else: ?>
                             <li><?= $this->Html->link('Register', array('admin' => false, 'plugin' => null, 'controller' => 'users', 'action' => 'add')) ?></li>
@@ -63,7 +53,11 @@
             <?= $this->fetch('content') ?>
 
         </div><!-- /container -->
-
+        <div id="footer">
+            <div class="container">
+                <p class="text-muted">Place sticky footer content here.</p>
+            </div>
+        </div>
         <!-- Le javascript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
