@@ -69,6 +69,13 @@ class AppController extends Controller {
         'Paginator',
         'DebugKit.Toolbar'
     );
+    public $helpers = array(
+        'Session',
+        'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+        'Form' => array('className' => 'BoostCake.BoostCakeForm'),
+        'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
+    );
+    public $layout = 'bootstrap';
 
     public function isAuthorized($user = null) {
         // Any registered user can access public functions

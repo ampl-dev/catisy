@@ -7,3 +7,6 @@
 [submodule "Plugin/DebugKit"]
 	path = Plugin/DebugKit
 	url = git@github.com:angelxmoreno/debug_kit.git
+[submodule "Plugin/BoostCake"]
+	path = Plugin/BoostCake
+	url = git@github.com:angelxmoreno/cakephp-plugin-boost_cake.git
