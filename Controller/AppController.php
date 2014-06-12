@@ -20,6 +20,11 @@ App::uses('Controller', 'Controller');
  *
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * 
+ * @property SessionComponent $Session
+ * @property PaginatorComponent $Paginator
+ * @property ToolbarComponent $Toolbar
+ * @property AuthComponent $Auth
  */
 class AppController extends Controller {
 
@@ -61,7 +66,8 @@ class AppController extends Controller {
                 )
             ),
         ),
-        'Paginator'
+        'Paginator',
+        'DebugKit.Toolbar'
     );
 
     public function isAuthorized($user = null) {
