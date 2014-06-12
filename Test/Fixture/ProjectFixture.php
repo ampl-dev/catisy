@@ -32,12 +32,12 @@ class ProjectFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '53991a82-4bc8-4ce8-a2b1-20a4387ed303',
+			'id' => '53992cce-3290-4a21-9946-086c387ed303',
 			'user_id' => 'Lorem ipsum dolor sit amet',
 			'name' => 'Lorem ipsum dolor sit amet',
 			'slug' => 'Lorem ipsum dolor sit amet',
-			'created' => '2014-06-12 03:12:02',
-			'modified' => '2014-06-12 03:12:02'
+			'created' => '2014-06-12 04:30:06',
+			'modified' => '2014-06-12 04:30:06'
 		),
 	);
 

@@ -35,13 +35,13 @@ class EpicFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '53991a80-d210-4228-8528-20a4387ed303',
+			'id' => '53992ccc-4640-42cf-9093-086c387ed303',
 			'project_id' => 'Lorem ipsum dolor sit amet',
 			'user_id' => 'Lorem ipsum dolor sit amet',
 			'name' => 'Lorem ipsum dolor sit amet',
 			'slug' => 'Lorem ipsum dolor sit amet',
-			'created' => '2014-06-12 03:12:00',
-			'modified' => '2014-06-12 03:12:00'
+			'created' => '2014-06-12 04:30:04',
+			'modified' => '2014-06-12 04:30:04'
 		),
 	);
 

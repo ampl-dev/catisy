@@ -33,13 +33,13 @@ class UserFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '53991a88-5378-49ad-9be2-20a4387ed303',
+			'id' => '53992cd4-9a1c-4f95-872a-086c387ed303',
 			'name' => 'Lorem ipsum dolor sit amet',
 			'email' => 'Lorem ipsum dolor sit amet',
 			'password' => 'Lorem ipsum dolor sit amet',
 			'role' => 'Lorem ipsum dolor ',
-			'created' => '2014-06-12 03:12:08',
-			'modified' => '2014-06-12 03:12:08'
+			'created' => '2014-06-12 04:30:12',
+			'modified' => '2014-06-12 04:30:12'
 		),
 	);
 

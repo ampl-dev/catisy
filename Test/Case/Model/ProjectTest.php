@@ -14,16 +14,17 @@ class ProjectTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.project',
-		'app.epic',
 		'app.user',
 		'app.comment',
+		'app.epic',
 		'app.ticket',
 		'app.ticket_container',
 		'app.ticket_type',
 		'app.ticket_state',
-		'app.requestor_user',
-		'app.owner_user',
-		'app.epics_ticket'
+		'app.epics_ticket',
+		'app.project_member',
+		'app.tagged',
+		'app.tag'
 	);
 
 /**

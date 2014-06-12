@@ -13,7 +13,18 @@ class TagTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.tag'
+		'app.tag',
+		'app.tagged',
+		'app.user',
+		'app.comment',
+		'app.epic',
+		'app.project',
+		'app.ticket',
+		'app.ticket_container',
+		'app.ticket_type',
+		'app.ticket_state',
+		'app.epics_ticket',
+		'app.project_member'
 	);
 
 /**

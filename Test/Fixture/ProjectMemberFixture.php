@@ -1,9 +1,9 @@
 <?php
 /**
- * ProjectsUserFixture
+ * ProjectMemberFixture
  *
  */
-class ProjectsUserFixture extends CakeTestFixture {
+class ProjectMemberFixture extends CakeTestFixture {
 
 /**
  * Fields
@@ -31,11 +31,11 @@ class ProjectsUserFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '53991a83-24b8-4003-96f4-20a4387ed303',
+			'id' => '53992cce-f690-4951-836e-086c387ed303',
 			'project_id' => 'Lorem ipsum dolor sit amet',
 			'user_id' => 'Lorem ipsum dolor sit amet',
-			'created' => '2014-06-12 03:12:03',
-			'modified' => '2014-06-12 03:12:03'
+			'created' => '2014-06-12 04:30:06',
+			'modified' => '2014-06-12 04:30:06'
 		),
 	);
 

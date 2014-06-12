@@ -33,12 +33,12 @@ class EpicsTicketFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '53991a81-cf7c-4826-8e50-20a4387ed303',
+			'id' => '53992ccd-79c4-40a5-b1d8-086c387ed303',
 			'epic_id' => 'Lorem ipsum dolor sit amet',
 			'ticket_id' => 'Lorem ipsum dolor sit amet',
 			'user_id' => 'Lorem ipsum dolor sit amet',
-			'created' => '2014-06-12 03:12:01',
-			'modified' => '2014-06-12 03:12:01'
+			'created' => '2014-06-12 04:30:05',
+			'modified' => '2014-06-12 04:30:05'
 		),
 	);
 

@@ -15,15 +15,16 @@ class EpicTest extends CakeTestCase {
 	public $fixtures = array(
 		'app.epic',
 		'app.project',
+		'app.user',
+		'app.comment',
+		'app.epics_ticket',
 		'app.ticket',
 		'app.ticket_container',
 		'app.ticket_type',
 		'app.ticket_state',
-		'app.requestor_user',
-		'app.owner_user',
-		'app.user',
-		'app.comment',
-		'app.epics_ticket'
+		'app.project_member',
+		'app.tagged',
+		'app.tag'
 	);
 
 /**

@@ -42,13 +42,13 @@ class TaggedFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '53991a84-ae20-47d5-a70d-20a4387ed303',
+			'id' => '53992ccf-b084-4e93-a03c-086c387ed303',
 			'user_id' => 'Lorem ipsum dolor sit amet',
 			'model_alias' => 'Lorem ipsum dolor sit amet',
 			'model_key' => 'Lorem ipsum dolor sit amet',
 			'tag_id' => 'Lorem ipsum dolor sit amet',
-			'created' => '2014-06-12 03:12:04',
-			'modified' => '2014-06-12 03:12:04'
+			'created' => '2014-06-12 04:30:07',
+			'modified' => '2014-06-12 04:30:07'
 		),
 	);
 

@@ -30,11 +30,11 @@ class TicketTypeFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '53991a87-8f18-45ed-93f5-20a4387ed303',
+			'id' => '53992cd2-7cbc-4d2b-bc9c-086c387ed303',
 			'name' => 'Lorem ipsum dolor sit amet',
 			'slug' => 'Lorem ipsum dolor sit amet',
-			'created' => '2014-06-12 03:12:07',
-			'modified' => '2014-06-12 03:12:07'
+			'created' => '2014-06-12 04:30:10',
+			'modified' => '2014-06-12 04:30:10'
 		),
 	);
 

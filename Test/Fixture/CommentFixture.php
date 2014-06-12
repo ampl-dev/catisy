@@ -34,14 +34,14 @@ class CommentFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '53991a80-cde8-4237-9ad7-20a4387ed303',
+			'id' => '53992ccb-7e3c-4f9c-9c61-086c387ed303',
 			'user_id' => 'Lorem ipsum dolor sit amet',
 			'model_alias' => 'Lorem ipsum dolor sit amet',
 			'model_key' => 'Lorem ipsum dolor sit amet',
 			'name' => 'Lorem ipsum dolor sit amet',
 			'slug' => 'Lorem ipsum dolor sit amet',
-			'created' => '2014-06-12 03:12:00',
-			'modified' => '2014-06-12 03:12:00'
+			'created' => '2014-06-12 04:30:03',
+			'modified' => '2014-06-12 04:30:03'
 		),
 	);
 

@@ -16,14 +16,15 @@ class TicketContainerTest extends CakeTestCase {
 		'app.ticket_container',
 		'app.ticket',
 		'app.project',
-		'app.epic',
 		'app.user',
 		'app.comment',
+		'app.epic',
 		'app.epics_ticket',
+		'app.project_member',
+		'app.tagged',
+		'app.tag',
 		'app.ticket_type',
-		'app.ticket_state',
-		'app.requestor_user',
-		'app.owner_user'
+		'app.ticket_state'
 	);
 
 /**

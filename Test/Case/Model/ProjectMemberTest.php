@@ -1,11 +1,11 @@
 <?php
-App::uses('ProjectsUser', 'Model');
+App::uses('ProjectMember', 'Model');
 
 /**
- * ProjectsUser Test Case
+ * ProjectMember Test Case
  *
  */
-class ProjectsUserTest extends CakeTestCase {
+class ProjectMemberTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -13,18 +13,18 @@ class ProjectsUserTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.projects_user',
+		'app.project_member',
 		'app.project',
-		'app.epic',
 		'app.user',
 		'app.comment',
+		'app.epic',
 		'app.ticket',
 		'app.ticket_container',
 		'app.ticket_type',
 		'app.ticket_state',
-		'app.requestor_user',
-		'app.owner_user',
-		'app.epics_ticket'
+		'app.epics_ticket',
+		'app.tagged',
+		'app.tag'
 	);
 
 /**
@@ -34,7 +34,7 @@ class ProjectsUserTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->ProjectsUser = ClassRegistry::init('ProjectsUser');
+		$this->ProjectMember = ClassRegistry::init('ProjectMember');
 	}
 
 /**
@@ -43,7 +43,7 @@ class ProjectsUserTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->ProjectsUser);
+		unset($this->ProjectMember);
 
 		parent::tearDown();
 	}
