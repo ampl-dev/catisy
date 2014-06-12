@@ -10,3 +10,6 @@
 [submodule "Plugin/BoostCake"]
 	path = Plugin/BoostCake
 	url = git@github.com:angelxmoreno/cakephp-plugin-boost_cake.git
+[submodule "Plugin/Utils"]
+	path = Plugin/Utils
+	url = git@github.com:angelxmoreno/utils.git

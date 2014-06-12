@@ -73,5 +73,25 @@ class Comment extends AppModel {
             'order' => ''
         )
     );
+    
+    /**
+     * List of behaviors to load when the model object is initialized. Settings can be
+     * passed to behaviors by using the behavior name as index. Eg:
+     *
+     * @var array
+     */
+    public $actsAs = array(
+        'Containable',
+        'Utils.Sluggable' => array(
+            'label' => 'name',
+            'separator' => '-',
+            'length' => 100,
+            'update' => false,
+            'unique' => true,
+        ),
+        'Utils.SoftDelete' => array(
+            'is_deleted' => 'deleted'
+        )
+    );
 
 }
