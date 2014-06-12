@@ -31,6 +31,14 @@ class AppController extends Controller {
     public $components = array(
         'Session',
         'Auth' => array(
+            'flash' => array(
+                'key' => 'flash',
+                'element' => 'alert',
+                'params' => array(
+                    'plugin' => 'BoostCake',
+                    'class' => 'alert-warning'
+                )
+            ),
             'loginAction' => array(
                 'admin' => false,
                 'plugin' => null,
@@ -76,6 +84,35 @@ class AppController extends Controller {
         'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
     );
     public $layout = 'bootstrap';
+
+    public function beforeFilter() {
+        $this->Auth->allow('display');
+        if ($this->Auth->loggedIn()) {
+            $this->currentUser = $this->Auth->user();
+            $this->currentUser_id = $this->Auth->user('id');
+        } else {
+            $this->currentUser = array();
+            $this->currentUser_id = 0;
+        }
+        $this->set('currentUser', $this->currentUser);
+        $this->set('currentUser_id', $this->currentUser_id);
+    }
+
+    public function flashError($message) {
+        $this->Session->setFlash($message, 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-danger'));
+    }
+
+    public function flashSuccess($message) {
+        $this->Session->setFlash($message, 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
+    }
+
+    public function flashWarning($message) {
+        $this->Session->setFlash($message, 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+    }
+
+    public function flashInfo($message) {
+        $this->Session->setFlash($message, 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-info'));
+    }
 
     public function isAuthorized($user = null) {
         // Any registered user can access public functions
