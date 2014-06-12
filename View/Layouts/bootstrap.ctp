@@ -36,6 +36,7 @@
 
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
+                        <li><?=$this->Html->link('Projects', array('admin' => false, 'plugin' => null, 'controller' => 'projects', 'action' => 'index')) ?></li>
                         <? if ($currentUser): ?>
                             <li><p class="navbar-text">Logged in as <?= $currentUser['name'] ?></p></li>
                             <li><?= $this->Html->link('Log Out', array('admin' => false, 'plugin' => null, 'controller' => 'users', 'action' => 'logout')) ?></li>
