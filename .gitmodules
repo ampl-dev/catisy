@@ -1,3 +1,6 @@
 [submodule "Vendor/cakephp"]
 	path = Vendor/cakephp
 	url = git@github.com:cakephp/cakephp.git
+[submodule "Lib/EnvSwitcher"]
+	path = Lib/EnvSwitcher
+	url = git://github.com/angelxmoreno/CakePHP-Environment-Switcher.git
