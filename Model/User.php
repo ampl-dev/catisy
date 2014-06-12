@@ -1,5 +1,6 @@
 <?php
 
+App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 App::uses('AppModel', 'Model');
 
 /**
@@ -185,5 +186,15 @@ class User extends AppModel {
             'finderQuery' => '',
         )
     );
+
+    public function beforeSave($options = array()) {
+        if (!empty($this->data['User']['password'])) {
+            $passwordHasher = new SimplePasswordHasher(array('hashType' => 'sha256'));
+            $this->data['User']['password'] = $passwordHasher->hash(
+                    $this->data['User']['password']
+            );
+        }
+        return true;
+    }
 
 }

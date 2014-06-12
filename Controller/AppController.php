@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Application level Controller
  *
@@ -9,7 +10,6 @@
  * @package       app.Controller
  * @since         CakePHP(tm) v 0.2.9
  */
-
 App::uses('Controller', 'Controller');
 
 /**
@@ -22,4 +22,61 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+    public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginAction' => array(
+                'admin' => false,
+                'plugin' => null,
+                'controller' => 'users',
+                'action' => 'login',
+            ),
+            'loginRedirect' => array(
+                'admin' => false,
+                'plugin' => null,
+                'controller' => 'projects',
+                'action' => 'index',
+            ),
+            'logoutRedirect' => array(
+                'admin' => false,
+                'plugin' => null,
+                'controller' => 'users',
+                'action' => 'login',
+            ),
+            'authError' => 'You need to be logged in to access that page!',
+            'authorize' => array('Controller'),
+            'authenticate' => array(
+                'Form' => array(
+                    'userModel' => 'User',
+                    'fields' => array(
+                        'username' => 'email',
+                        'password' => 'password'
+                    ),
+                    'scope' => array('User.is_active' => 1),
+                    'passwordHasher' => array(
+                        'className' => 'Simple',
+                        'hashType' => 'sha256'
+                    )
+                )
+            ),
+        ),
+        'Paginator'
+    );
+
+    public function isAuthorized($user = null) {
+        // Any registered user can access public functions
+        if (empty($this->request->params['admin'])) {
+            return true;
+        }
+
+        // Only admins can access admin functions
+        if (isset($this->request->params['admin'])) {
+            return (bool) ($user['role'] === 'admin');
+        }
+
+        // Default deny
+        return false;
+    }
+
 }
