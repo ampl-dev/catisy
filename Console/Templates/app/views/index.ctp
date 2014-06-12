@@ -1,12 +1,14 @@
 <div class="row">
     <div class="col-md-9">
-        <h2><?= "<?=__('List %s', __('{$pluralHumanName}'));?>"; ?></h2>
-
+        <h1><?= "<?=__('List %s', __('{$pluralHumanName}'));?>"; ?></h1>
+<?= "<? if(!\${$pluralVar}):?>"?>
+<?= "<p>You have no {$pluralHumanName}!</p>"?>
+<?="<? else :?>"?>
         <p>
             <?= "<?=\$this->Paginator->counter(array('format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')));?>\n"; ?>
         </p>
         <?= "<?=\$this->Paginator->pagination(array(
-            'ul' => 'pagination pagination-lg'
+            'ul' => 'pagination pagination-sm'
         )); ?>\n"; ?>
         <table class="table table-striped">
             <tr>
@@ -47,8 +49,9 @@
         </table>
 
         <?= "<?=\$this->Paginator->pagination(array(
-            'ul' => 'pagination pagination-lg'
+            'ul' => 'pagination pagination-sm'
         )); ?>\n"; ?>
+<?="<? endif; ?>"?>
     </div>
     <div class="col-md-3">
         <div class="panel panel-default">
