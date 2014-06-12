@@ -15,7 +15,11 @@ class ProjectsController extends AppController {
      * @return void
      */
     public function index() {
-        $this->Project->recursive = 0;
+        $this->Paginator->settings['Project'] = array(
+            'conditions' => array(
+                'Project.id' => $this->Project->allowedProjectIds($this->currentUser_id),
+            )
+        );
         $this->set('projects', $this->Paginator->paginate());
     }
 
@@ -30,7 +34,13 @@ class ProjectsController extends AppController {
         if (!$this->Project->exists()) {
             throw new NotFoundException(__('Invalid %s', __('project')));
         }
-        $this->set('project', $this->Project->read(null, $id));
+        $project = $this->Project->find('first', array(
+            'conditions' => array(
+                'Project.id' => $id,
+            ),
+            'contain' => array('Creator')
+        ));
+        $this->set('project', $project);
     }
 
     /**
@@ -40,6 +50,7 @@ class ProjectsController extends AppController {
      */
     public function add() {
         if ($this->request->is('post')) {
+            $this->request->data['Project']['user_id'] = $this->currentUser_id;
             $this->Project->create();
             if ($this->Project->save($this->request->data)) {
                 $this->flashSuccess(__('The %s has been saved', __('project')));
@@ -48,9 +59,6 @@ class ProjectsController extends AppController {
                 $this->flashError(__('The %s could not be saved. Please, try again.', __('project')));
             }
         }
-        $creators = $this->Project->Creator->find('list');
-        $members = $this->Project->Member->find('list');
-        $this->set(compact('creators', 'members'));
     }
 
     /**

@@ -9,6 +9,7 @@ App::uses('AppModel', 'Model');
  * @property Epic $Epic
  * @property Ticket $Ticket
  * @property User $Member
+ * @property ProjectMember $ProjectMembership
  */
 class Project extends AppModel {
 
@@ -88,6 +89,19 @@ class Project extends AppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
+        ),
+        'ProjectMembership' => array(
+            'className' => 'ProjectMember',
+            'foreignKey' => 'project_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
         )
     );
 
@@ -131,5 +145,21 @@ class Project extends AppModel {
             'is_deleted' => 'deleted'
         )
     );
+
+    public function allowedProjectIds($user_id) {
+        $member_projects = $this->ProjectMembership->find('list', array(
+            'conditions' => array(
+                'ProjectMembership.user_id' => $user_id,
+            ),
+            'fields' => array('ProjectMembership.project_id','ProjectMembership.project_id')
+        ));
+        $project_ids = $this->find('list', array(
+            'conditions' => array(
+                'Project.user_id' => $user_id
+            ),
+            'fields' => array('Project.id')
+        ));
+        return array_merge($member_projects, $project_ids);
+    }
 
 }
